@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교사용 업무 포털</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <header class="sidebar-header">
+                <div class="logo">
+                    <span class="emoji">👨‍🏫</span>
+                    <div>
+                        <h1>교사용 업무 포털</h1>
+                        <p>학급 운영 및 생활지도를 위한 업무 도구 모음</p>
+                    </div>
+                </div>
+            </header>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <h2>📂 카테고리</h2>
+                    <ul class="nav-list" id="category-list">
+                        <li class="active" data-filter="all"><span class="emoji">🏫</span> 전체</li>
+                        <li data-filter="class"><span class="emoji">👥</span> 학급운영</li>
+                        <li data-filter="life"><span class="emoji">🧑‍🎓</span> 생활지도</li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h2>⭐ 자주 사용하는 도구</h2>
+                    <ul class="nav-list shortcut-list">
+                        <li><span class="emoji">👥</span> 좌석 배정</li>
+                        <li><span class="emoji">🏠</span> 방 배정</li>
+                        <li><span class="emoji">🧹</span> 청소구역 배정</li>
+                        <li><span class="emoji">👨‍👩‍👧</span> 모둠 배정</li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <h2>🕒 최근 사용한 도구</h2>
+                    <ul class="nav-list shortcut-list">
+                        <li><span class="emoji">👥</span> 좌석 배정</li>
+                        <li><span class="emoji">🏠</span> 방 배정</li>
+                        <li><span class="emoji">🧹</span> 청소구역 배정</li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Bar -->
+            <div class="search-container glass-panel">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" placeholder="필요한 기능을 검색하세요...">
+                </div>
+            </div>
+
+            <div class="content-header">
+                <h1 class="main-title">📚 전체 도구</h1>
+            </div>
+
+            <!-- Tool Sections -->
+            <div class="tools-container">
+                <!-- Class Management -->
+                <section class="tool-section" id="class-tools">
+                    <h2 class="section-title"><span class="emoji">👥</span> 학급운영</h2>
+                    <div class="tools-grid">
+                        <!-- Card 1 -->
+                        <div class="tool-card glass-panel" data-category="class" data-name="좌석 배정 학생 명단으로 좌석 자동 배정">
+                            <div class="card-icon">👥</div>
+                            <h3 class="card-title">좌석 배정</h3>
+                            <p class="card-desc">학생 명단으로 좌석 자동 배정</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="tool-card glass-panel" data-category="class" data-name="모둠 배정 모둠 자동 편성">
+                            <div class="card-icon">👨‍👩‍👧</div>
+                            <h3 class="card-title">모둠 배정</h3>
+                            <p class="card-desc">모둠 자동 편성</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="tool-card glass-panel" data-category="class" data-name="청소구역 배정 청소구역 자동 배정">
+                            <div class="card-icon">🧹</div>
+                            <h3 class="card-title">청소구역 배정</h3>
+                            <p class="card-desc">청소구역 자동 배정</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="tool-card glass-panel" data-category="class" data-name="번호 추첨 번호 및 순서 무작위 추첨">
+                            <div class="card-icon">🎲</div>
+                            <h3 class="card-title">번호 추첨</h3>
+                            <p class="card-desc">번호 및 순서 무작위 추첨</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="tool-card glass-panel" data-category="class" data-name="당번 배정 학급 당번 자동 배정">
+                            <div class="card-icon">📝</div>
+                            <h3 class="card-title">당번 배정</h3>
+                            <p class="card-desc">학급 당번 자동 배정</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="tool-card glass-panel" data-category="class" data-name="조 편성 조별 활동 편성">
+                            <div class="card-icon">📋</div>
+                            <h3 class="card-title">조 편성</h3>
+                            <p class="card-desc">조별 활동 편성</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Life Guidance -->
+                <section class="tool-section" id="life-tools">
+                    <h2 class="section-title"><span class="emoji">🧑‍🎓</span> 생활지도</h2>
+                    <div class="tools-grid">
+                        <!-- Card 1 -->
+                        <div class="tool-card glass-panel" data-category="life" data-name="방 배정 기숙사 방 자동 배정">
+                            <div class="card-icon">🏠</div>
+                            <h3 class="card-title">방 배정</h3>
+                            <p class="card-desc">기숙사 방 자동 배정</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="tool-card glass-panel" data-category="life" data-name="상담 기록 상담 내용 관리">
+                            <div class="card-icon">📅</div>
+                            <h3 class="card-title">상담 기록</h3>
+                            <p class="card-desc">상담 내용 관리</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="tool-card glass-panel" data-category="life" data-name="생활기록 생활지도 기록">
+                            <div class="card-icon">📖</div>
+                            <h3 class="card-title">생활기록</h3>
+                            <p class="card-desc">생활지도 기록</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="tool-card glass-panel" data-category="life" data-name="출결 관리 출결 현황 관리">
+                            <div class="card-icon">✅</div>
+                            <h3 class="card-title">출결 관리</h3>
+                            <p class="card-desc">출결 현황 관리</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="tool-card glass-panel" data-category="life" data-name="상벌점 관리 상벌점 기록">
+                            <div class="card-icon">⚠️</div>
+                            <h3 class="card-title">상벌점 관리</h3>
+                            <p class="card-desc">상벌점 기록</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="tool-card glass-panel" data-category="life" data-name="학부모 연락 연락 내용 관리">
+                            <div class="card-icon">📞</div>
+                            <h3 class="card-title">학부모 연락</h3>
+                            <p class="card-desc">연락 내용 관리</p>
+                            <button class="action-btn">실행하기 <i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- No Results -->
+                <div id="no-results" class="no-results hidden glass-panel">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>검색 결과가 없습니다</h3>
+                    <p>다른 검색어를 입력해보세요.</p>
+                </div>
+            </div>
+
+            <!-- Main Footer -->
+            <footer class="main-footer">
+                <div class="footer-links">
+                    <a href="terms.html">이용약관</a>
+                    <span class="divider">|</span>
+                    <a href="privacy.html">개인정보처리방침</a>
+                </div>
+                <p>&copy; 2026 교사용 업무 포털. All rights reserved.</p>
+            </footer>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
