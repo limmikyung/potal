@@ -29,23 +29,52 @@ document.addEventListener('DOMContentLoaded', () => {
             filterTools();
         });
 
-        // Category Filter
+        // Category Filter + Accordion
         categoryItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Update active state
+            item.addEventListener('click', (e) => {
+                // If a submenu item was clicked, handle separately
+                if (e.target.closest('.submenu')) return;
+
+                // Update active state for top-level items
                 categoryItems.forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
-                
-                // Update filter
-                currentFilter = item.getAttribute('data-filter');
+
+                // Toggle accordion for items with submenu
+                if (item.classList.contains('has-submenu')) {
+                    const isOpen = item.classList.contains('open');
+                    // Close all submenus
+                    categoryItems.forEach(i => i.classList.remove('open'));
+                    if (!isOpen) item.classList.add('open');
+                    // Also apply category filter
+                    currentFilter = item.getAttribute('data-filter');
+                } else {
+                    // Close all submenus when clicking 전체
+                    categoryItems.forEach(i => i.classList.remove('open'));
+                    currentFilter = item.getAttribute('data-filter');
+                }
                 filterTools();
             });
         });
 
-        // Card Click Effects (Ripple)
+        // Submenu item clicks — scroll to tool card
+        document.querySelectorAll('.submenu li').forEach(subItem => {
+            subItem.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const toolName = subItem.getAttribute('data-tool');
+                const target = Array.from(document.querySelectorAll('.card-title'))
+                    .find(el => el.textContent.trim() === toolName);
+                if (target) {
+                    target.closest('.tool-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    target.closest('.tool-card').style.animation = 'none';
+                    target.closest('.tool-card').offsetHeight;
+                    target.closest('.tool-card').style.animation = 'highlight 0.6s ease';
+                }
+            });
+        });
+
+        // Card Click Effects
         toolCards.forEach(card => {
             card.addEventListener('click', function(e) {
-                // If clicked on the button, let the button handle it
                 if (e.target.closest('.action-btn')) {
                     executeTool(this.querySelector('.card-title').textContent);
                     return;

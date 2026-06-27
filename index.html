@@ -27,8 +27,32 @@
                     <h2>📂 카테고리</h2>
                     <ul class="nav-list" id="category-list">
                         <li class="active" data-filter="all"><span class="emoji">🏫</span> 전체</li>
-                        <li data-filter="class"><span class="emoji">👥</span> 학급운영</li>
-                        <li data-filter="life"><span class="emoji">🧑‍🎓</span> 생활지도</li>
+
+                        <li class="has-submenu" data-filter="class">
+                            <span class="emoji">👥</span> 학급운영
+                            <i class="fa-solid fa-chevron-down submenu-arrow"></i>
+                            <ul class="submenu">
+                                <li data-filter="class" data-tool="좌석 배정">📌 좌석 배정</li>
+                                <li data-filter="class" data-tool="모둠 배정">👨‍👩‍👧 모둠 배정</li>
+                                <li data-filter="class" data-tool="청소구역 배정">🧹 청소구역 배정</li>
+                                <li data-filter="class" data-tool="번호 추첨">🎲 번호 추첨</li>
+                                <li data-filter="class" data-tool="당번 배정">📝 당번 배정</li>
+                                <li data-filter="class" data-tool="조 편성">📋 조 편성</li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu" data-filter="life">
+                            <span class="emoji">🧑‍🎓</span> 생활지도
+                            <i class="fa-solid fa-chevron-down submenu-arrow"></i>
+                            <ul class="submenu">
+                                <li data-filter="life" data-tool="방 배정">🏠 방 배정</li>
+                                <li data-filter="life" data-tool="상담 기록">📅 상담 기록</li>
+                                <li data-filter="life" data-tool="생활기록">📖 생활기록</li>
+                                <li data-filter="life" data-tool="출결 관리">✅ 출결 관리</li>
+                                <li data-filter="life" data-tool="상벌점 관리">⚠️ 상벌점 관리</li>
+                                <li data-filter="life" data-tool="학부모 연락">📞 학부모 연락</li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
 
